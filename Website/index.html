@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/130527/qrcode.js"></script>
+    
+    </head>
+    <body>
+        <div id="container">
+            <div id="mainFormDiv">
+                <div id="mainForm">
+                    <div class="formField">
+                        <label>Vorname: </label>
+                        <input id="firstName" type="text" value="Lorem">
+                        <button class="btn_deleteField" onclick="deleteField(this)"></button>
+                    </div>
+                    <div class="formField">
+                        <label>Nachname: </label>
+                        <input id="lastName" type="text" value="Ipsum">
+                        <button class="btn_deleteField" onclick="deleteField(this)">
+                            <img src="https://findicons.com/files/icons/1262/amora/256/delete.png">
+                        </button>
+                    </div>
+                </div>
+
+                <button id="new_textfield" onclick="openAppendFieldWindow()">Get new field</button>
+
+                <button id="btn_generate" onclick="generateCode()">generate</button>
+            </div>
+            <div id="qrcode"></div>
+        </div>
+        
+        <div id="appendFieldWindowDiv">
+            <div id="appendFieldWindow">
+                <p>new Field</p>
+                
+                <button id="btn_website" onclick="appendField('website')">Website</button>
+                <button id="btn_company" onclick="appendField('company')">Company</button>
+                <button id="btn_email" onclick="appendField('email')">E-Mail</button>
+                
+                <button onclick="closeAppendFieldWindow()">Cancel</button>
+            </div>
+        </div>
+        
+        <script>
+            function openAppendFieldWindow() {
+                document.getElementById("appendFieldWindowDiv").style.zIndex = 5;
+            }
+            function closeAppendFieldWindow() {
+                document.getElementById("appendFieldWindowDiv").style.zIndex = -5;
+            }
+            
+            function appendField(fieldType) {
+                var newDiv = document.createElement("div");
+                newDiv.setAttribute("class", "formField");
+                
+                var newInput = document.createElement("input");
+                var newlabel = document.createElement("label");
+                switch (fieldType) {
+                    case "website":
+                        newInput.setAttribute("id", "website");
+                        newInput.setAttribute("type", "text");
+                        newInput.setAttribute("value", "website");
+                        newlabel.innerHTML = "Website: ";
+                        document.getElementById("btn_website").disabled = true;
+                        break;
+                    case "company":
+                        newInput.setAttribute("id", "company");
+                        newInput.setAttribute("type", "text");
+                        newInput.setAttribute("value", "company");
+                        newlabel.innerHTML = "Company: ";
+                        document.getElementById("btn_company").disabled = true;
+                        break;
+                    case "email":
+                        newInput.setAttribute("id", "email");
+                        newInput.setAttribute("type", "text");
+                        newInput.setAttribute("value", "email");
+                        newlabel.innerHTML = "E-Mail: ";
+                        document.getElementById("btn_email").disabled = true;
+                        break;
+                }
+                newDiv.appendChild(newlabel);
+                newDiv.appendChild(newInput);
+                newDiv.appendChild(document.createElement("button").setAttribute("onclick", "deleteField(this)").setAttribute("class", "btn_deleteField"));
+                closeAppendFieldWindow();
+            }
+            
+            function deleteField(sender) {
+                sender.parentElement().remove();
+            }
+            
+            
+            function generateCode() {
+                var qrSize = 128;
+                
+                $('#qrcode').empty();
+                $('#qrcode').qrcode({
+                    width: qrSize,
+                    height: qrSize,
+                    text: $('#vorname').val()
+                        + " "
+                        + $('#nachname').val()
+                        + " "
+                        + $('#alter').val()
+                });
+            }
+        </script>
+    </body>
+</html>
