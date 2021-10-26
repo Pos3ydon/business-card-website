@@ -21,11 +21,10 @@
 }
 
 .formField {
-    
+
 }
 
 .btn_deleteField {
-    backface-visibility: hidden;
     border: 0;
     margin: 0;
     padding: 0;
@@ -35,8 +34,14 @@
 .btn_deleteField > img {
     width: 20px;
     height: 20px;
+    vertical-align: bottom;
     padding: 0;
+    opacity: 0%;
 }
+.btn_deleteField > img:hover {
+    opacity: 100%;
+}
+
 
 #qrcode {
     width: 128px;
@@ -58,7 +63,7 @@
     left: 0px;
     top: 0px;
     z-index: -5;
-    
+
     background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
 }
