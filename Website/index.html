@@ -2,106 +2,138 @@
 
 <html>
     <head>
-
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="main_style.css">
+        
         <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
         <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/130527/qrcode.js"></script>
-
+        
+        
+        <link rel="stylesheet" href="styles/mainForm.css">
+        
+        <link rel="stylesheet" href="styles/appendField.css">
+        <script src="scripts/appendField.js"></script>
+        
+        <link rel="stylesheet" href="styles/resultPreview.css">
+        <script src="scripts/resultPreview.js"></script>
+        
+        <link rel="stylesheet" href="styles/qrcode.css">
+        
     </head>
     <body>
         <div id="container">
             <div id="mainFormDiv">
                 <div id="mainForm">
                     <div id="formFirstName" class="formField">
-                        <label>First Name: </label>
-                        <input id="firstName" type="text" value="Lorem">
-                        <button class="btn_deleteField" onclick="deleteField('formFirstName', 'btn_firstName')">
-                            <img src="images/delete.png">
+                        <label>First name: </label>
+                        <input id="firstName" class="formFieldInput" type="text" placeholder="FirstName" oninput="updateValue(this, 'resultPreviewFirstNameP')">
+                        <button class="deleteFieldBtn" onclick="deleteField('formFirstName', 'btn_firstName')">
+                            <img class="deleteFieldBtnImg" src="images/delete.png">
                         </button>
                     </div>
                     <div id="formLastName" class="formField">
-                        <label>Last Name: </label>
-                        <input id="lastName" type="text" value="Ipsum">
-                        <button class="btn_deleteField" onclick="deleteField('formLastName', 'btn_lastName')">
-                            <img src="images/delete.png">
+                        <label>Last name: </label>
+                        <input id="lastName" class="formFieldInput" type="text" placeholder="LastName" oninput="updateValue(this, 'resultPreviewLastNameP')">
+                        <button class="deleteFieldBtn" onclick="deleteField('formLastName', 'btn_lastName')">
+                            <img class="deleteFieldBtnImg" src="images/delete.png">
                         </button>
                     </div>
-                    <div id="formAge" class="formField" hidden>
+                    <!--<div id="formAge" class="formField" hidden>
                         <label>Age: </label>
-                        <input id="age" type="number" value="18">
-                        <button class="btn_deleteField" onclick="deleteField('formAge', 'btn_age')">
-                            <img src="images/delete.png">
+                        <input id="age" class="formFieldInput" type="number" placeholder="Age" oninput="updateValue(this, 'resultPreviewFirstnameP')">
+                        <button class="deleteFieldBtn" onclick="deleteField('formAge', 'btn_age')">
+                            <img class="deleteFieldBtnImg" src="images/delete.png">
+                        </button>
+                    </div>-->
+                    <div id="formProfession" class="formProfession" hidden>
+                        <label class="formFieldTitle">Profession: </label>
+                        <input id="profession" class="formFieldInput" type="profession" placeholder="Profession" oninput="updateValue(this, 'resultPreviewProfessionP')">
+                        <button class="deleteFieldBtn" onclick="deleteField('formProfession', 'btn_profession')">
+                            <img class="deleteFieldBtnImg" src="images/delete.png">
                         </button>
                     </div>
                     <div id="formEmail" class="formField" hidden>
                         <label>E-Mail: </label>
-                        <input id="email" type="email">
-                        <button class="btn_deleteField" onclick="deleteField('formEmail', 'btn_email')">
-                            <img src="images/delete.png">
+                        <input id="email" class="formFieldInput" type="email" placeholder="E-Mail" oninput="updateValue(this, 'resultPreviewEmailP')">
+                        <button class="deleteFieldBtn" onclick="deleteField('formEmail', 'btn_email')">
+                            <img class="deleteFieldBtnImg" src="images/delete.png">
                         </button>
                     </div>
                     <div id="formWebsite" class="formField" hidden>
                         <label>Website: </label>
-                        <input id="website" type="text">
-                        <button class="btn_deleteField" onclick="deleteField('formWebsite', 'btn_website')">
-                            <img src="images/delete.png">
+                        <input id="website" class="formFieldInput" type="text" placeholder="Website" oninput="updateValue(this, 'resultPreviewWebsiteP')">
+                        <button class="deleteFieldBtn" onclick="deleteField('formWebsite', 'btn_website')">
+                            <img class="deleteFieldBtnImg" src="images/delete.png">
                         </button>
                     </div>
                     <div id="formCompany" class="formField" hidden>
-                        <label>Company: </label>
-                        <input id="company" type="company">
-                        <button class="btn_deleteField" onclick="deleteField('formCompany', 'btn_company')">
-                            <img src="images/delete.png">
+                        <label class="formFieldTitle">Company: </label>
+                        <input id="company" class="formFieldInput" type="company" placeholder="Company" oninput="updateValue(this, 'resultPreviewCompanyP')">
+                        <button class="deleteFieldBtn" onclick="deleteField('formCompany', 'btn_company')">
+                            <img class="deleteFieldBtnImg" src="images/delete.png">
                         </button>
                     </div>
                 </div>
 
-                <button id="new_textfield" onclick="openAppendFieldWindow()">Get new field</button>
+                <button id="new_textfield" onclick="openAppendFieldWindow()">Add new field</button>
 
-                <button id="btn_generate" onclick="generateCode()">generate</button>
+                <button id="btn_generate" onclick="generateCode()">Generate QR-Code</button>
+                
             </div>
             
-            <div id="qrcode"></div>
+            <div id="resultDiv">
+                <div id="resultPreviewDiv">
+                    <div id="resultPreview">
+                        <div id="resultPreviewLogo">
+                            <div>
+                                <button onclick="document.getElementById('openPreviewLogoFile').click()">Edit</button>
+                                <input id="openPreviewLogoFile" type="file" onchange="openLogoImage(event)">
+                            </div>
+                        </div>
+                        <div id="resultPreviewFirstName">
+                            <p id="resultPreviewFirstNameP"></p>
+                        </div>
+                        <div id="resultPreviewLastName">
+                            <p id="resultPreviewLastNameP"></p>
+                        </div>
+                        <div id="resultPreviewProfession">
+                            <p id="resultPreviewProfessionP"></p>
+                        </div>
+                        <div id="resultPreviewEmail">
+                            <p id="resultPreviewEmailP"></p>
+                        </div>
+                        <div id="resultPreviewWebsite">
+                            <p id="resultPreviewWebsiteP"></p>
+                        </div>
+                        <div id="resultPreviewCompany">
+                            <p id="resultPreviewCompanyP"></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="qrcodeDiv">
+                    <div id="qrcode"></div>
+                </div>
+            
+            </div>
         </div>
 
         <div id="appendFieldWindowDiv">
             <div id="appendFieldWindow">
-                <p>new Field</p>
+                <p id="appendFieldWindowTitle">Add Input Field</p>
 
-                <button id="btn_firstName" onclick="appendField('formFirstName', 'btn_firstName')" style="display: none;">First Name</button>
-                <button id="btn_lastName" onclick="appendField('formlastName', 'btn_lastName')" style="display: none;">Last Name</button>
-                <button id="btn_age" onclick="appendField('formAge', 'btn_age')" style="display: block;">Age</button>
-                <button id="btn_email" onclick="appendField('formEmail', 'btn_email')" style="display: block;">E-Mail</button>
-                <button id="btn_website" onclick="appendField('formWebsite', 'btn_website')" style="display: block;">Website</button>
-                <button id="btn_company" onclick="appendField('formCompany', 'btn_company')" style="display: block;">Company</button>
-                <button onclick="closeAppendFieldWindow()">Cancel</button>
+                <button id="btn_firstName" class="appendFieldButton" onclick="appendField('formFirstName', 'btn_firstName')" style="display: none;">First name</button>
+                <button id="btn_lastName" class="appendFieldButton" onclick="appendField('formLastName', 'btn_lastName')" style="display: none;">Last name</button>
+                <!--<button id="btn_age" class="appendFieldButton" onclick="appendField('formAge', 'btn_age')" style="display: block;">Age</button>-->
+                <button id="btn_profession" class="appendFieldButton" onclick="appendField('formProfession', 'btn_profession')" style="display: block;">Profession</button>
+                <button id="btn_email" class="appendFieldButton" onclick="appendField('formEmail', 'btn_email')" style="display: block;">E-Mail</button>
+                <button id="btn_website" class="appendFieldButton" onclick="appendField('formWebsite', 'btn_website')" style="display: block;">Website</button>
+                <button id="btn_company" class="appendFieldButton" onclick="appendField('formCompany', 'btn_company')" style="display: block;">Company</button>
+                <button id="btn_closeAppendFieldWindow" onclick="closeAppendFieldWindow()">Cancel</button>
             </div>
         </div>
 
-        
     </body>
     
     <script>
-        function openAppendFieldWindow() {
-            $("#appendFieldWindowDiv").css("z-index", "5");
-        }
-        function closeAppendFieldWindow() {
-            $("#appendFieldWindowDiv").css("z-index", "-5");
-        }
-
-        function appendField(formId, buttonId) {
-            $("#" + formId).attr("style", "display: block");
-            $("#" + buttonId).attr("style", "display: none");
-
-            closeAppendFieldWindow();
-        }
-
-        function deleteField(formId, buttonId) {
-            $("#" + formId).attr("style", "display: none");
-            $("#" + buttonId).attr("style", "display: block");
-        }
-
-
         function generateCode() {
             var qrSize = 128;
 

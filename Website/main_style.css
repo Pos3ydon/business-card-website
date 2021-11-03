@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap');
+
+body {
+    background: hsl(180, 6%, 7%);
+    
+    color: white;
+}
+
+#container {
+    font-family: 'Inconsolata', monospace;
+    background: blue;
+    
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 80%;
+    height: 80%;
+    margin: 5% 10%;
+    float: left;
+    
+    text-align: center;
+}
+
+

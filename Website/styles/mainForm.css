@@ -1,0 +1,38 @@
+#mainFormDiv {
+    font-family: 'Inconsolata', monospace;
+    background: hsl(180, 6%, 9%);
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+#mainForm {
+    padding-top: 30%;
+}
+
+.formFieldTitle {
+    
+}
+
+.formFieldInput {
+    
+}
+
+.deleteFieldBtn {
+    border: 0;
+    padding: 0;
+    height: 0;
+    width: 0;
+}
+
+.deleteFieldBtnImg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    padding: 0;
+    opacity: 0%;
+}
+
+.deleteFieldBtnImg:hover {
+    opacity: 100%;
+}

@@ -1,0 +1,21 @@
+#qrcodeDiv {
+    background: hsl(180, 6%, 13%);
+    
+    position: relative;
+    height: 50%;
+}
+
+#qrcode {
+    position: absolute;
+    width: 256px;
+    height: 256px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    text-align: center;
+}
+
+#qrcode a {
+    font-size: 0.8em;
+}
