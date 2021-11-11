@@ -15,6 +15,9 @@ function appendField(formId, buttonId) {
 }
 
 function deleteField(formId, buttonId) {
+    /*alert(document.getElementById(formId).children.item(1).getAttribute("value"));
+    document.getElementById(formId).getElementsByTagName("input")[0].setAttribute("value", "");*/
     document.getElementById(formId).setAttribute("style", "display: none");
     document.getElementById(buttonId).setAttribute("style", "display: block");
+    //alert(document.getElementById(formId).children.item(1).getAttribute("value"));
 }

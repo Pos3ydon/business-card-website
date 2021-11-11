@@ -30,7 +30,7 @@
 
 /*Logo*/
 #resultPreviewLogo {
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/LEGO_logo.svg/2048px-LEGO_logo.svg.png);
+    background-image: url(../images/standard-logo.png);
     background-size: cover;
     
     position: relative;

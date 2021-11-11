@@ -21,4 +21,8 @@ body {
     text-align: center;
 }
 
+button, input {
+    color: black;
+}
+
 
