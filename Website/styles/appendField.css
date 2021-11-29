@@ -29,8 +29,10 @@
 
 .appendFieldButton {
     margin: auto;
+    margin-bottom: 5px;
 }
 
 #btn_closeAppendFieldWindow {
-    margin-top: 40px;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }

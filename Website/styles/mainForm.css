@@ -15,6 +15,17 @@
 }
 
 .formFieldInput {
+    background-color: transparent;
+    
+    border: 0px;
+    border-bottom: 50px;
+    border-bottom-width: 50px;
+    border-bottom-color: blue;
+    
+    color: hsl(0, 0%, 70%);
+}
+
+.formFieldInput:hover {
     
 }
 
