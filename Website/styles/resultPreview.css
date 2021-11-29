@@ -7,15 +7,18 @@
     float: left;
 }
 
-#resultPreviewDiv {
+#previewDiv {
     background: hsl(180, 6%, 11%);
+    background-image: ;
     
     position: relative;
     height: 50%;
 }
 
-#resultPreview {
+#preview {
     background: grey;
+    background-repeat: no-repeat;
+    background-size: cover;
     
     position: absolute;
     height: 250px;
@@ -28,8 +31,88 @@
 }
 
 
+/*Change Background*/
+#previewChangeBackgroundButton {
+    background-image: url(../images/pencil-square-light.svg);
+    background-repeat: no-repeat;
+    background-size: 60% 60%;
+    background-color: transparent;
+    background-position: center;
+    
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    left: 100%;
+    transform: translate(-100%, 0);
+    
+    border: 0;
+}
+
+#previewChangeBackgroundButton:hover {
+    background-image: url(../images/pencil-square.svg);
+}
+
+#changeBackgroundWindow {
+    background: hsl(180, 6%, 30%);
+    display: none;
+    
+    position: absolute;
+    float: left;
+    height: 100px;
+    width: 200px;
+    left: 100%;
+    
+    border-radius: 5px;
+}
+
+#changeBackgroundWindow:hover {
+    display: block;
+}
+
+#changeBackgroundWindowContent {
+    position: absolute;
+    width: 106px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    
+    text-align: left
+}
+
+#changeBackgroundColorBtn {
+    vertical-align: middle;
+}
+
+#openBackgroundImageBtn {
+    font-size: 0;
+}
+
+#openBackgroundImageBtn::file-selector-button {
+    display: none;
+}
+
+#openBackgroundImageBtnBtn {
+    background-image: url(../images/image.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    width: 50px;
+    height: 27px;
+    padding: 1px 2px;
+    vertical-align: middle;
+    
+    border: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: rgb(118, 118, 118);
+}
+
 /*Logo*/
-#resultPreviewLogo {
+#previewLogo {
     background-image: url(../images/standard-logo.png);
     background-size: cover;
     
@@ -40,7 +123,7 @@
     margin: 30px 0px 0px 30px;
 }
 
-#resultPreviewLogo > div {
+#previewLogo > div {
     background-color: rgba(0, 0, 0, 0.5);
     opacity: 0%;
     
@@ -51,11 +134,11 @@
     font-size: 0;
 }
 
-#resultPreviewLogo > div:hover {
+#previewLogo > div:hover {
     opacity: 100%;
 }
 
-#resultPreviewLogo > div > input {
+#previewLogo > div > input {
     z-index: 5;
     
     height: 100%;
@@ -64,11 +147,11 @@
     font-size: 0;
 }
 
-#resultPreviewLogo > div > input::file-selector-button {
+#previewLogo > div > input::file-selector-button {
     display: none;
 }
 
-#resultPreviewLogo > div > button {
+#previewLogo > div > button {
     font-family: 'Inconsolata', monospace;
     background-color: transparent;
     
@@ -85,7 +168,7 @@
 
 
 /*FirstName*/
-#resultPreviewFirstName {
+#previewFirstName {
     position: relative;
     float: left;
     margin: 40px 0px 0px 40px;
@@ -95,13 +178,13 @@
     font-size: 35px;
 }
 
-#resultPreviewFirstNameP {
+#previewFirstNameP {
     margin: 0;
 }
 
 
 /*LastName*/
-#resultPreviewLastName {
+#previewLastName {
     position: relative;
     float: left;
     margin: 40px 0px 0px 20px;
@@ -111,13 +194,13 @@
     font-size: 35px;
 }
 
-#resultPreviewLastNameP {
+#previewLastNameP {
     margin: 0;
 }
 
 
 /*Profession*/
-#resultPreviewProfession {
+#previewProfession {
     
     position: absolute;
     float: left;
@@ -128,13 +211,13 @@
     font-size: 30px;
 }
 
-#resultPreviewProfessionP {
+#previewProfessionP {
     margin: 0;
 }
 
 
 /*E-Mail*/
-#resultPreviewEmail {
+#previewEmail {
     
     position: absolute;
     float: left;
@@ -145,13 +228,13 @@
     font-size: 25px;
 }
 
-#resultPreviewEmailP {
+#previewEmailP {
     margin: 0;
 }
 
 
 /*Website*/
-#resultPreviewWebsite {
+#previewWebsite {
     
     position: absolute;
     float: left;
@@ -162,13 +245,13 @@
     font-size: 20px;
 }
 
-#resultPreviewWebsiteP {
+#previewWebsiteP {
     margin: 0;
 }
 
 
 /*Company*/
-#resultPreviewCompany {
+#previewCompany {
     
     position: absolute;
     float: left;
@@ -179,6 +262,6 @@
     font-size: 20px;
 }
 
-#resultPreviewCompanyP {
+#previewCompanyP {
     margin: 0;
 }

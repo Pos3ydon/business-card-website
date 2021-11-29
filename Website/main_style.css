@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap');
 
+/*TODO: muss noch richtig angewand werden*/
+@font-face {
+    font-family: "CascadiaCodePL";
+    src: url('fonts/CascadiaCode-2110.31/ttf/CascadiaCodePL.ttf');
+}
+
 body {
     background: hsl(180, 6%, 7%);
     
@@ -7,7 +13,7 @@ body {
 }
 
 #container {
-    font-family: 'Inconsolata', monospace;
+    font-family: 'CascadiaCodePL', monospace;
     background: blue;
     
     position: absolute;

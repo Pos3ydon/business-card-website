@@ -37,88 +37,86 @@
             <div id="mainFormDiv">
                 <div id="mainForm">
                     <div id="formFirstName" class="formField">
-                        <label>First name: </label>
-                        <input id="firstName" class="formFieldInput" type="text" placeholder="FirstName" oninput="updateValue(this, 'resultPreviewFirstNameP')">
-                        <button class="deleteFieldBtn" onclick="deleteField('formFirstName', 'btn_firstName')">
-                            <img class="deleteFieldBtnImg" src="images/delete.png">
-                        </button>
+                        <button class="deleteFieldBtn" onclick="deleteField('formFirstName', 'btn_firstName')"></button>
+                        <label>First name:</label>
+                        <input id="firstName" class="formFieldInput" type="text" placeholder="First Name" oninput="updateValue(this, 'previewFirstNameP')">
                     </div>
                     <div id="formLastName" class="formField">
-                        <label>Last name: </label>
-                        <input id="lastName" class="formFieldInput" type="text" placeholder="LastName" oninput="updateValue(this, 'resultPreviewLastNameP')">
-                        <button class="deleteFieldBtn" onclick="deleteField('formLastName', 'btn_lastName')">
-                            <img class="deleteFieldBtnImg" src="images/delete.png">
-                        </button>
+                        <button class="deleteFieldBtn" onclick="deleteField('formLastName', 'btn_lastName')"></button>
+                        <label>Last name:</label>
+                        <input id="lastName" class="formFieldInput" type="text" placeholder="Last Name" oninput="updateValue(this, 'previewLastNameP')">
                     </div>
-                    <!--<div id="formAge" class="formField" hidden>
-                        <label>Age: </label>
-                        <input id="age" class="formFieldInput" type="number" placeholder="Age" oninput="updateValue(this, 'resultPreviewFirstnameP')">
-                        <button class="deleteFieldBtn" onclick="deleteField('formAge', 'btn_age')">
-                            <img class="deleteFieldBtnImg" src="images/delete.png">
-                        </button>
-                    </div>-->
-                    <div id="formProfession" class="formProfession" hidden>
-                        <label class="formFieldTitle">Profession: </label>
-                        <input id="profession" class="formFieldInput" type="profession" placeholder="Profession" oninput="updateValue(this, 'resultPreviewProfessionP')">
-                        <button class="deleteFieldBtn" onclick="deleteField('formProfession', 'btn_profession')">
-                            <img class="deleteFieldBtnImg" src="images/delete.png">
-                        </button>
+                    <div id="formProfession" class="formField" hidden>
+                        <button class="deleteFieldBtn" onclick="deleteField('formProfession', 'btn_profession')"></button>
+                        <label>Profession:</label>
+                        <input id="profession" class="formFieldInput" type="profession" placeholder="Profession" oninput="updateValue(this, 'previewProfessionP')">
                     </div>
                     <div id="formEmail" class="formField" hidden>
-                        <label>E-Mail: </label>
-                        <input id="email" class="formFieldInput" type="email" placeholder="E-Mail" oninput="updateValue(this, 'resultPreviewEmailP')">
-                        <button class="deleteFieldBtn" onclick="deleteField('formEmail', 'btn_email')">
-                            <img class="deleteFieldBtnImg" src="images/delete.png">
-                        </button>
+                        <button class="deleteFieldBtn" onclick="deleteField('formEmail', 'btn_email')"></button>
+                        <label>E-Mail:</label>
+                        <input id="email" class="formFieldInput" type="email" placeholder="E-Mail" oninput="updateValue(this, 'previewEmailP')">
                     </div>
                     <div id="formWebsite" class="formField" hidden>
-                        <label>Website: </label>
-                        <input id="website" class="formFieldInput" type="text" placeholder="Website" oninput="updateValue(this, 'resultPreviewWebsiteP')">
-                        <button class="deleteFieldBtn" onclick="deleteField('formWebsite', 'btn_website')">
-                            <img class="deleteFieldBtnImg" src="images/delete.png">
-                        </button>
+                        <button class="deleteFieldBtn" onclick="deleteField('formWebsite', 'btn_website')"></button>
+                        <label>Website:</label>
+                        <input id="website" class="formFieldInput" type="text" placeholder="Website" oninput="updateValue(this, 'previewWebsiteP')">
                     </div>
                     <div id="formCompany" class="formField" hidden>
-                        <label class="formFieldTitle">Company: </label>
-                        <input id="company" class="formFieldInput" type="company" placeholder="Company" oninput="updateValue(this, 'resultPreviewCompanyP')">
-                        <button class="deleteFieldBtn" onclick="deleteField('formCompany', 'btn_company')">
-                            <img class="deleteFieldBtnImg" src="images/delete.png">
-                        </button>
+                        <button class="deleteFieldBtn" onclick="deleteField('formCompany', 'btn_company')"></button>
+                        <label>Company:</label>
+                        <input id="company" class="formFieldInput" type="company" placeholder="Company" oninput="updateValue(this, 'previewCompanyP')">
                     </div>
                 </div>
-
-                <button id="new_textfield" class="btn btn-primary" onclick="openAppendFieldWindow()">Add new field</button>
-
-                <button id="btn_generate" class="btn btn-success" onclick="generateCode()">Generate QR-Code</button>
                 
+                <div id="mainFormButtons">
+                    <button id="new_textfield" class="btn btn-primary" onclick="openAppendFieldWindow()">Add new field</button>
+
+                    <button id="btn_generate" class="btn btn-success" onclick="generateCode()">Generate QR-Code</button>
+                </div>
+                    
             </div>
             
             <div id="resultDiv">
-                <div id="resultPreviewDiv">
-                    <div id="resultPreview">
-                        <div id="resultPreviewLogo">
-                            <div>
-                                <button onclick="document.getElementById('openPreviewLogoFile').click()">Edit</button>
-                                <input id="openPreviewLogoFile" type="file" onchange="openLogoImage(event)">
+                <div id="previewDiv">
+                    <div id="preview">
+                        <button id="previewChangeBackgroundButton"></button>
+                        <div id="changeBackgroundWindow" hidden>
+                            <div id="changeBackgroundWindowContent">
+                                <div>
+                                    <label>Colour:</label>
+                                    <input id="changeBackgroundColorBtn" type="color" value="#808080" oninput="changeBackgroundColor(event)">
+                                </div>
+                                <div>
+                                    <label>Image:</label>
+                                    <button id="openBackgroundImageBtnBtn" onclick="document.getElementById('openBackgroundImageBtn').click()"></button>
+                                    <input id="openBackgroundImageBtn" type="file" oninput="openBackgroundImage(event)">
+                                </div>
                             </div>
                         </div>
-                        <div id="resultPreviewFirstName">
-                            <p id="resultPreviewFirstNameP"></p>
+                        
+                        <div id="previewLogo">
+                            <div>
+                                <button onclick="document.getElementById('openPreviewLogoFile').click()">Edit</button>
+                                <input id="openPreviewLogoBtn" type="file" onchange="openLogoImage(event)">
+                            </div>
                         </div>
-                        <div id="resultPreviewLastName">
-                            <p id="resultPreviewLastNameP"></p>
+                        <div id="previewFirstName">
+                            <p id="previewFirstNameP"></p>
                         </div>
-                        <div id="resultPreviewProfession">
-                            <p id="resultPreviewProfessionP"></p>
+                        <div id="previewLastName">
+                            <p id="previewLastNameP"></p>
                         </div>
-                        <div id="resultPreviewEmail">
-                            <p id="resultPreviewEmailP"></p>
+                        <div id="previewProfession">
+                            <p id="previewProfessionP"></p>
                         </div>
-                        <div id="resultPreviewWebsite">
-                            <p id="resultPreviewWebsiteP"></p>
+                        <div id="previewEmail">
+                            <p id="previewEmailP"></p>
                         </div>
-                        <div id="resultPreviewCompany">
-                            <p id="resultPreviewCompanyP"></p>
+                        <div id="previewWebsite">
+                            <p id="previewWebsiteP"></p>
+                        </div>
+                        <div id="previewCompany">
+                            <p id="previewCompanyP"></p>
                         </div>
                     </div>
                 </div>
