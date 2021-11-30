@@ -16,6 +16,12 @@ $(document).ready(function(){
             document.getElementById("changeBackgroundWindow").setAttribute("style", "display: none");
         }
     });
+    
+    $("#openBackgroundImageBtn").bind({
+       click: function(e){
+           document.getElementById("openBackgroundImageBtn").value = null;
+       } 
+    });
 });
 
 
@@ -23,7 +29,7 @@ function openLogoImage(event) {
     var selected = event.target.files[0];
     var fr = new FileReader();
     fr.onload = function (event) {
-        document.getElementById("resultPreviewLogo").style.backgroundImage = "url('" + event.target.result + "')";
+        document.getElementById("previewLogo").style.backgroundImage = "url('" + event.target.result + "')";
     }
     fr.readAsDataURL(event.target.files[0]);
 }
