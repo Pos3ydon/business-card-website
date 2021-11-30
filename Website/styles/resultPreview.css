@@ -32,7 +32,7 @@
 
 
 /*Change Background*/
-#previewChangeBackgroundButton {
+#previewChangeBackgroundBtn {
     background-image: url(../images/pencil-square-light.svg);
     background-repeat: no-repeat;
     background-size: 60% 60%;
@@ -50,7 +50,7 @@
     border: 0;
 }
 
-#previewChangeBackgroundButton:hover {
+#previewChangeBackgroundBtn:hover {
     background-image: url(../images/pencil-square.svg);
 }
 
@@ -111,16 +111,31 @@
     border-color: rgb(118, 118, 118);
 }
 
+
+/*Draggable*/
+.previewField {
+    cursor: move;
+    display: inline-block;
+}
+
+.previewField > p {
+    display: contents;
+}
+
+
 /*Logo*/
 #previewLogo {
     background-image: url(../images/standard-logo.png);
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
     
-    position: relative;
+    position: absolute;
     float: left;
     height: 90px;
     width: 90px;
-    margin: 30px 0px 0px 30px;
+    top: 30px;
+    left: 30px;
 }
 
 #previewLogo > div {
@@ -130,8 +145,6 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    
-    font-size: 0;
 }
 
 #previewLogo > div:hover {
@@ -157,8 +170,8 @@
     
     position: absolute;
     top: 50%;
-    right: 50%;
-    transform: translate(50%, -50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     
     border: 0;
     
@@ -169,9 +182,9 @@
 
 /*FirstName*/
 #previewFirstName {
-    position: relative;
-    float: left;
-    margin: 40px 0px 0px 40px;
+    position: absolute;
+    top: 30px;
+    left: 160px;
     
     color: black;
     text-align: left;
@@ -185,9 +198,9 @@
 
 /*LastName*/
 #previewLastName {
-    position: relative;
-    float: left;
-    margin: 40px 0px 0px 20px;
+    position: absolute;
+    top: 30px;
+    left: 280px;
     
     color: black;
     text-align: left;
@@ -201,10 +214,9 @@
 
 /*Profession*/
 #previewProfession {
-    
     position: absolute;
-    float: left;
-    margin: 80px 0px 0px 160px;
+    top: 70px;
+    left: 160px;
     
     color: black;
     text-align: left;
@@ -218,10 +230,9 @@
 
 /*E-Mail*/
 #previewEmail {
-    
     position: absolute;
-    float: left;
-    margin: 135px 0px 0px 30px;
+    top: 130px;
+    left: 30px;
     
     color: black;
     text-align: left;
@@ -235,10 +246,9 @@
 
 /*Website*/
 #previewWebsite {
-    
     position: absolute;
-    float: left;
-    margin: 170px 0px 0px 30px;
+    top: 165px;
+    left: 30px;
     
     color: black;
     text-align: left;
@@ -252,10 +262,9 @@
 
 /*Company*/
 #previewCompany {
-    
     position: absolute;
-    float: left;
-    margin: 200px 0px 0px 30px;
+    top: 195px;
+    left: 30px;
     
     color: black;
     text-align: left;
