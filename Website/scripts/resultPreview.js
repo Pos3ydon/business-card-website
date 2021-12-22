@@ -52,10 +52,23 @@ $(document).ready(function() {
             var fr = new FileReader();
             fr.onload = function(e) {
                 document.getElementById("previewLogo").style.backgroundImage = "url('" + e.target.result + "')";
+                document.getElementById("previewLogo").style.height = "90px";
+                document.getElementById("previewLogo").style.width = "90px";
             }
             fr.readAsDataURL(e.target.files[0]);
         }
     });
+    
+    $("#previewLogo").bind({
+        mouseenter: function(e) {
+            document.getElementById("movePreviewLogoBtn").style.display = "block";
+            document.getElementById("deletePreviewLogoBtn").style.display = "block";
+        },
+        mouseleave: function(e) {
+            document.getElementById("movePreviewLogoBtn").style.display = "none";
+            document.getElementById("deletePreviewLogoBtn").style.display = "none";
+        }
+    })
 });
 
 
