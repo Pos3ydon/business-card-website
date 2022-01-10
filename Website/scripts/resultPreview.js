@@ -1,25 +1,20 @@
 $(document).ready(function() {
-    $(".previewField").draggable();
+    //$(".previewField").draggable();
     
     $("#previewChangeBackgroundBtn").bind({
         mouseenter: function(e) {
             document.getElementById("changeBackgroundWindow").style.display = "block";
-            //document.getElementById("changeBackgroundWindow").setAttribute("style", "display: block");
         },
         mouseleave: function(e) {
             document.getElementById("changeBackgroundWindow").style.display = "none";
-            //document.getElementById("changeBackgroundWindow").setAttribute("style", "display: none");
         }
     });
-    
     $("#changeBackgroundWindow").bind({
         mouseenter: function(e) {
             document.getElementById("changeBackgroundWindow").style.display = "block";
-            //document.getElementById("changeBackgroundWindow").setAttribute("style", "display: block");
         },
         mouseleave: function(e) {
             document.getElementById("changeBackgroundWindow").style.display = "none";
-            //document.getElementById("changeBackgroundWindow").setAttribute("style", "display: none");
         }
     });
     
@@ -30,9 +25,10 @@ $(document).ready(function() {
         }
     });
     
+
     $("#openBackgroundImageBtn").bind({
         click: function(e) {
-            document.getElementById("openBackgroundImageBtn").value = null;
+            this.value = null;
         },
         input: function(e) {
             var selected = e.target.files[0];
@@ -59,16 +55,35 @@ $(document).ready(function() {
         }
     });
     
-    $("#previewLogo").bind({
-        mouseenter: function(e) {
-            document.getElementById("movePreviewLogoBtn").style.display = "block";
-            document.getElementById("deletePreviewLogoBtn").style.display = "block";
-        },
-        mouseleave: function(e) {
-            document.getElementById("movePreviewLogoBtn").style.display = "none";
-            document.getElementById("deletePreviewLogoBtn").style.display = "none";
-        }
-    })
+    // $("#previewLogo").bind({
+    //     mouseenter: function(e) {
+    //         this.hidden = false;
+    //         this.style.display = "block";
+
+    //         document.getElementById("movePreviewLogoBtn").style.display = "block";
+    //         document.getElementById("deletePreviewLogoBtn").style.display = "block";
+    //     },
+    //     mouseleave: function(e) {
+    //         document.getElementById("movePreviewLogoBtn").style.display = "none";
+    //         document.getElementById("deletePreviewLogoBtn").style.display = "none";
+    //     }
+    // });
+    // $("#movePreviewLogoBtn").bind({
+    //     mouseenter: function(e) {
+    //         this.style.display = "block";
+    //     },
+    //     mouseleave: function(e) {
+    //         this.style.display = "none";
+    //     }
+    // });
+    // $("#deletePreviewLogoBtn").bind({
+    //     mouseenter: function(e) {
+    //         this.style.display = "block";
+    //     },
+    //     mouseleave: function(e) {
+    //         this.style.display = "none";
+    //     }
+    // });
 });
 
 

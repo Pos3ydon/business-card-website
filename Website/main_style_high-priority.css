@@ -7,14 +7,13 @@
 }
 
 body {
-    background: hsl(180, 6%, 7%);
+    background-color: rgb(50, 50, 50);
     
     color: white;
 }
 
 #container {
     font-family: 'CascadiaCodePL', monospace;
-    background: blue;
     
     position: absolute;
     top: 0px;
