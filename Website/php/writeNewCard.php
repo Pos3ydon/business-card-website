@@ -14,36 +14,14 @@
     }
 
     try {
+        $statement = $conn->prepare("insert into tbl_business_cards (firstName,lastName,profession,email,website,company,backgroundColor) values ( ? , ? , ? , ? , ? , ? , ? )");
+        $statement->execute([get("firstName"), get("lastName"), get("profession"), get("email"), get("website"), get("company"), get("backgroundColor")]);
 
-        // $conn->exec("Insert Into tbl_businesscards (" .
-        //     (($_POST["firstName"] == "") ? "" : "firstName") .
-        //     (($_POST["lastName"] == "") ? "" : ", lastName") .
-        //     (($_POST["profession"] == "") ? "" : ", profession") .
-        //     (($_POST["email"] == "") ? "" : ", email") .
-        //     (($_POST["website"] == "") ? "" : ", website") .
-        //     (($_POST["company"] == "") ? "" : ", company") .
-        //     ") Values (" .
-        //     (($_POST["firstName"] == "") ? "" : "'" . $_POST["firstName"] . "'") .
-        //     (($_POST["lastName"] == "") ? "" : ", '" . $_POST["lastName"] . "'") .
-        //     (($_POST["profession"] == "") ? "" : ", '" . $_POST["profession"] . "'") .
-        //     (($_POST["email"] == "") ? "" : ", '" . $_POST["email"] . "'") .
-        //     (($_POST["website"] == "") ? "" : ", '" . $_POST["website"] . "'") .
-        //     (($_POST["company"] == "") ? "" : ", '" . $_POST["company"] . "'") .
-        //     ");");
-
-
-        $statement = $conn->prepare("insert into tbl_businesscards (firstName,lastName,profession,email,website,company) values ( ? , ? , ? , ? , ? , ? )");
-        $statement->execute([get("firstName"), get("lastName"), get("profession"), get("email"), get("website"), get("company")]);
-        
-
-        // echo "\nInserted successfully";
+        //echo "\nInserted successfully";
     } catch(PDOException $e) {
-        // echo "\nInsert failed: " . $e->getMessage();
+        //echo "\nInsert failed: " . $e->getMessage();
     }
     
-    // echo "\n";
-    // print_r($_POST);
-    // echo "\n";
     print($conn->lastInsertId());
     die();
 
