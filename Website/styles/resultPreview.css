@@ -277,6 +277,22 @@
 }
 
 
+/*Telefon*/
+#previewTel {
+    position: absolute;
+    top: 165px;
+    left: 180px;
+    
+    color: black;
+    text-align: left;
+    font-size: 20px;
+}
+
+#previewTelP {
+    margin: 0;
+}
+
+
 /*Website*/
 #previewWebsite {
     position: absolute;

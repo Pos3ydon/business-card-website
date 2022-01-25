@@ -4,6 +4,7 @@ CREATE TABLE tbl_business_cards (
     lastName varchar(255),
     profession varchar(255),
     email varchar(255),
+    tel varchar(255),
     website varchar(255),
     company varchar(255),
     backgroundColor varchar(18)

@@ -14,16 +14,36 @@
     }
 
     try {
-        $statement = $conn->prepare("insert into tbl_business_cards (firstName,lastName,profession,email,website,company,backgroundColor) values ( ? , ? , ? , ? , ? , ? , ? )");
-        $statement->execute([get("firstName"), get("lastName"), get("profession"), get("email"), get("website"), get("company"), get("backgroundColor")]);
+        $statement = $conn->prepare("select cardID from tbl_business_cards where firstName = ? and lastName = ? and profession = ? and email = ? and tel = ? and website = ? and company = ? and backgroundColor = ? ");
+        $statement->execute([get("firstName"), get("lastName"), get("profession"), get("email"), get("tel"), get("website"), get("company"), get("backgroundColor")]);
+        $result = $statement->fetchAll(PDO::FETCH_ASSOC);
+        
+        if (!isset($result[0])) {
+            $statement = $conn->prepare("insert into tbl_business_cards (firstName,lastName,profession,email,tel,website,company,backgroundColor) values ( ? , ? , ? , ? , ? , ? , ? , ? )");
+            $statement->execute([get("firstName"), get("lastName"), get("profession"), get("email"), get("tel"), get("website"), get("company"), get("backgroundColor")]);
 
+            $id = $conn->lastInsertId();
+
+
+            $extension = pathinfo($_FILES["logoImage"]["name"], PATHINFO_EXTENSION);
+            $isUploaded = move_uploaded_file($_FILES["logoImage"]["tmp_name"], "./../user-images/". $id . "_logoImage." . $extension);
+            $extension = pathinfo($_FILES["backgroundImage"]["name"], PATHINFO_EXTENSION);
+            $isUploaded = move_uploaded_file($_FILES["backgroundImage"]["tmp_name"], "./../user-images/". $id . "_backgroundImage." . $extension);
+
+
+            print($id);
+
+            die();
+        }
+        else {
+            print($result[0]["cardID"]);
+            die();
+        }
+        
         //echo "\nInserted successfully";
-    } catch(PDOException $e) {
+    } catch(Exception $e) {
         //echo "\nInsert failed: " . $e->getMessage();
     }
-    
-    print($conn->lastInsertId());
-    die();
 
     function get($id)
     {

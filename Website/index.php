@@ -49,14 +49,21 @@
                 }
 
             }
-        ?>
+        
 
+            $glob = glob("./user-images/" . $_GET["id"] . "_*");
+            //$logo = glob("./../User-Images/" . $_GET["id"] . "_logoImage.*", GLOB_NOSORT)[0];
+            //$background = glob("./../User-Images/" . $_GET["id"] . "_backgroundImage.*", GLOB_NOSORT)[0];
+            $background = $glob[0];
+            $logo = $glob[1];
+        
+        ?>
 
 
         <div id="cardDiv">
             <div id="viewDiv">
-                <div id="view" style="background-color: <?php echo $result["backgroundColor"];?>;">
-                    <div id="viewLogo" class="viewField">
+                <div id="view" style="background-color: <?php echo $result["backgroundColor"];?>; background-image: url('<?php echo $background?>');">
+                    <div id="viewLogo" class="viewField"style="background-image: url('<?php echo $logo?>');">
                     </div>
                     <div id="viewFirstName">
                         <p id="viewFirstNameP" class="viewField"><?php echo $result["firstName"];?></p>
