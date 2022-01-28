@@ -1,0 +1,66 @@
+/*FirstName*/
+#previewFirstName {
+    top: 10%;
+    left: 30%;
+    
+    font-size: 30px;
+}
+
+/*LastName*/
+#previewLastName {
+    top: 10%;
+    left: 60%;
+    
+    font-size: 30px;
+}
+
+
+/*Profession*/
+#previewProfession {
+    position: absolute;
+    top: 28%;
+    left: 30%;
+    
+    color: black;
+    text-align: left;
+    font-size: 30px;
+}
+
+
+/*E-Mail*/
+#previewEmail {
+    position: absolute;
+    top: 55%;
+    left: 8%;
+    
+    color: black;
+    text-align: left;
+    font-size: 25px;
+}
+
+
+/*Telefon*/
+#previewTel {
+    top: 72%;
+    left: 45%;
+    
+    font-size: 20px;
+}
+
+
+/*Website*/
+#previewWebsite {
+    top: 72%;
+    left: 8%;
+    
+    font-size: 20px;
+}
+
+
+/*Company*/
+#previewCompany {
+    top: 85%;
+    left: 8%;
+    
+    font-size: 20px;
+}

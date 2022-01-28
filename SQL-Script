@@ -7,7 +7,7 @@ CREATE TABLE tbl_business_cards (
     tel varchar(255),
     website varchar(255),
     company varchar(255),
-    backgroundColor varchar(18)
+    meta text
 );
 
 

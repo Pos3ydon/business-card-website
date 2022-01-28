@@ -1,34 +1,48 @@
 $(document).ready(function() {
-    $("#new_textfield").bind({
+    $("#btn_openAppendFieldWindow").bind({
         click: function(e) {
-            document.getElementById("appendFieldWindowDiv").style.display = "block";
+            $("#appendFieldWindowDiv").show();
         }
     });
     $("#btn_closeAppendFieldWindow").bind({
         click: function(e) {
-            document.getElementById("appendFieldWindowDiv").style.display = "none";
+            $("#appendFieldWindowDiv").hide();
         }
     });
 });
 
-
-/*function openAppendFieldWindow() {
-    document.getElementById("appendFieldWindowDiv").setAttribute("style", "display: block");
-}*/
-
-/*function closeAppendFieldWindow() {
-    document.getElementById("appendFieldWindowDiv").setAttribute("style", "display: none");
-}*/
-
 function appendField(formId, buttonId) {
-    document.getElementById(formId).style.display = "block";
-    document.getElementById(buttonId).style.display = "none";
-    //document.getElementById(formId).getElementsByTagName("input")[0].oninput();
+    $("#" + formId).show();
+    $("#" + buttonId).hide();
+    // document.getElementById(formId).style.display = "block";
+    // document.getElementById(buttonId).style.display = "none";
+
+    $(".formField").each(function(index) {
+        if ($(this).css("display") == "none") {
+            return false;
+        }
+
+        if (index == 6) {
+            $("#btn_closeAppendFieldWindow").click();
+            $("#btn_openAppendFieldWindow").hide();
+        }
+    });
 }
 
 function deleteField(formId, buttonId) {
-    //document.getElementById(formId).getElementsByTagName("input")[0].value = "";
-    //document.getElementById(formId).getElementsByTagName("input")[0].oninput();
-    document.getElementById(formId).style.display = "none";
-    document.getElementById(buttonId).style.display = "block";
+    $("#" + formId).hide();
+    $("#" + buttonId).show();
+    // document.getElementById(formId).style.display = "none";
+    // document.getElementById(buttonId).style.display = "block";
+
+    var input = $('#' + formId).find("input");
+    input.val("");
+    input.trigger("input");
+    
+    $(".formField").each(function(index) {
+        if ($(this).css("display") == "none") {
+            $("#btn_openAppendFieldWindow").show();
+            return false;
+        }
+    });
 }

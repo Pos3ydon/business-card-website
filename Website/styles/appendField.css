@@ -14,11 +14,15 @@
 
 #appendFieldWindow {
     background: hsl(180, 6%, 15%);
+
+    position: absolute;
     width: 300px;
     margin: auto;
-    margin-top: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     border-radius: 50px;
-    
     text-align: center;
 }
 

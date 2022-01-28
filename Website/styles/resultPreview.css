@@ -1,6 +1,6 @@
 #resultDiv {
     font-family: 'Inconsolata', monospace;
-    background: red;
+    background: hsl(180, 6%, 13%);
     
     width: 50%;
     height: 100%;
@@ -20,14 +20,17 @@
     background-size: cover;
     
     position: absolute;
-    height: 250px;
-    width: 450px;
+    height: 70%;
+    width: 70%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     
     border-radius: 30px;
 }
+
+
+
 
 
 /*Change Background*/
@@ -111,15 +114,7 @@
 }
 
 
-/*Draggable*/
-.previewField {
-    /*cursor: move;*/
-    display: inline-block;
-}
 
-.previewField > p {
-    display: contents;
-}
 
 
 /*Logo*/
@@ -131,10 +126,16 @@
     
     position: relative;
     float: left;
-    height: 90px;
-    width: 90px;
+    /*height: 30%;*/
+    width: 20%;
     top: 30px;
     left: 30px;
+}
+
+#previewLogo:before {
+    content:     "";
+    display:     block;
+    padding-top: 100%; /* initial ratio of 1:1*/
 }
 
 #previewLogo:hover {
@@ -213,113 +214,85 @@
 }*/
 
 
-/*FirstName*/
-#previewFirstName {
+
+
+
+/*Fields*/
+.previewField {
     position: absolute;
-    top: 30px;
-    left: 160px;
-    
-    color: black;
-    text-align: left;
-    font-size: 35px;
+    cursor: move;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+            
+    transform: matrix(1, 0, 0, 1, 0, 0);
 }
 
-#previewFirstNameP {
+.previewField:hover {
+    z-index: 5;
+} 
+
+.previewField:hover > button {
+    display: block;
+}
+
+.previewField:hover > div {
+    background-color: rgba(0, 0, 0, 0.5);
+
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+/* .previewField > p {
+    display: contents;
+
     margin: 0;
+} */
+
+
+
+.draggable {
+    /* height: 100%;
+    width: 100%; */
+
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    overflow: hidden;
+    text-align: center;
+}
+
+.draggable:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.draggable > p {
+    display: contents;
+    margin: 0;
+
+    /*transform: translate(-50%, -50%);*/
+
+    color: black;
+    line-height: 0.7;
 }
 
 
-/*LastName*/
-#previewLastName {
+
+.btn_previewChangeFontSize {
+    background-image: url(./../images/arrows-angle-expand.svg);
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center;
+    
     position: absolute;
-    top: 30px;
-    left: 280px;
-    
-    color: black;
-    text-align: left;
-    font-size: 35px;
-}
-
-#previewLastNameP {
-    margin: 0;
-}
-
-
-/*Profession*/
-#previewProfession {
-    position: absolute;
-    top: 70px;
-    left: 160px;
-    
-    color: black;
-    text-align: left;
-    font-size: 30px;
-}
-
-#previewProfessionP {
-    margin: 0;
-}
-
-
-/*E-Mail*/
-#previewEmail {
-    position: absolute;
-    top: 130px;
-    left: 30px;
-    
-    color: black;
-    text-align: left;
-    font-size: 25px;
-}
-
-#previewEmailP {
-    margin: 0;
-}
-
-
-/*Telefon*/
-#previewTel {
-    position: absolute;
-    top: 165px;
-    left: 180px;
-    
-    color: black;
-    text-align: left;
-    font-size: 20px;
-}
-
-#previewTelP {
-    margin: 0;
-}
-
-
-/*Website*/
-#previewWebsite {
-    position: absolute;
-    top: 165px;
-    left: 30px;
-    
-    color: black;
-    text-align: left;
-    font-size: 20px;
-}
-
-#previewWebsiteP {
-    margin: 0;
-}
-
-
-/*Company*/
-#previewCompany {
-    position: absolute;
-    top: 195px;
-    left: 30px;
-    
-    color: black;
-    text-align: left;
-    font-size: 20px;
-}
-
-#previewCompanyP {
-    margin: 0;
+    height: 25px;
+    width: 25px;
+    left: calc(100% - 5px);
+    top: calc(100% - 5px);
 }

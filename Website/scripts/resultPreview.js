@@ -1,30 +1,28 @@
 $(document).ready(function() {
-    //$(".previewField").draggable();
     
     $("#previewChangeBackgroundBtn").bind({
         mouseenter: function(e) {
-            document.getElementById("changeBackgroundWindow").style.display = "block";
+            $("#changeBackgroundWindow").show();
         },
         mouseleave: function(e) {
-            document.getElementById("changeBackgroundWindow").style.display = "none";
+            $("#changeBackgroundWindow").hide();
         }
     });
     $("#changeBackgroundWindow").bind({
         mouseenter: function(e) {
-            document.getElementById("changeBackgroundWindow").style.display = "block";
+            $("#changeBackgroundWindow").show();
         },
         mouseleave: function(e) {
-            document.getElementById("changeBackgroundWindow").style.display = "none";
+            $("#changeBackgroundWindow").hide();
         }
     });
     
     $("#changeBackgroundColorBtn").bind({
         input: function(e) {
-            document.getElementById("preview").style.backgroundColor = event.target.value;
-            document.getElementById("preview").style.backgroundImage = null;
+            $("#preview").css("backgroundColor", event.target.value)
+            $("#preview").css("backgroundImage", null)
         }
     });
-    
 
     $("#openBackgroundImageBtn").bind({
         click: function(e) {
@@ -34,11 +32,11 @@ $(document).ready(function() {
             var selected = e.target.files[0];
             var fr = new FileReader();
             fr.onload = function(e) {
-                document.getElementById("preview").style.backgroundImage = "url('" + e.target.result + "')";
+                $("#preview").css("backgroundImage", "url('" + e.target.result + "')");
             }
             fr.readAsDataURL(e.target.files[0]);
 
-            document.getElementById("preview").style.backgroundColor = null;
+            $("preview").css("#backgroundColor", null);
         }
     });
     
@@ -47,11 +45,97 @@ $(document).ready(function() {
             var selected = e.target.files[0];
             var fr = new FileReader();
             fr.onload = function(e) {
-                document.getElementById("previewLogo").style.backgroundImage = "url('" + e.target.result + "')";
-                document.getElementById("previewLogo").style.height = "90px";
-                document.getElementById("previewLogo").style.width = "90px";
+                $("#previewLogo").css("backgroundImage", "url('" + e.target.result + "')");
+                $("#previewLogo").css("height", "90px");
+                $("#previewLogo").css("width", "90px");
             }
             fr.readAsDataURL(e.target.files[0]);
+        }
+    });
+
+
+    var ismousedown = false;
+    var oldPosX = 0;
+    var oldPosY = 0;
+    $(".draggable").bind({
+        mousedown: function(e) {
+            ismousedown = true;
+            oldPosX = e.clientX;
+            oldPosY = e.clientY;
+        },
+        mousemove: function(e) {
+            if (ismousedown) {
+                var newPosX = oldPosX - e.clientX;
+                var newPosY = oldPosY - e.clientY;
+                oldPosX = e.clientX;
+                oldPosY = e.clientY;
+
+                var parent = $(this).parent();
+
+                var moveX = this.parentElement.offsetLeft - newPosX;
+                var moveY = this.parentElement.offsetTop - newPosY;
+                if (moveX >= 0 && moveX < parseInt(parent.parent().css("width")) - parseInt(parent.css("width")))
+                    parent.css("left", moveX + "px");
+                if (moveY >= 0 && moveY < parseInt(parent.parent().css("height")) - parseInt(parent.css("height")))
+                    parent.css("top", moveY + "px");
+            }
+        },
+        mouseleave: function(e) {
+            ismousedown = false;
+        }
+    });
+    $(window).bind({
+        mouseup: function(e) {
+            ismousedown = false;
+        }
+    });
+
+    $(".btn_previewChangeFontSize").bind({
+        mousedown: function(e) {
+            ismousedown = true;
+            oldPosX = e.clientX;
+            oldPosY = e.clientY;
+        },
+        mousemove: function(e) {
+            var p = $(this).parent().find("div").find("p");
+            var div = $(this).parent().find("div");
+            var parent = $(this).parent();
+
+            if (ismousedown) {
+                var moveX = oldPosX - e.clientX;
+                var moveY = oldPosY - e.clientY;
+
+                var oldWidth = parseInt(div.width());
+                var oldHeight = parseInt(div.height());
+
+                var newWidth = oldWidth - moveX;
+                var newHeight = oldHeight - moveY;
+                //var newHeight = newWidth * (oldHeight / oldWidth);
+                
+                console.log("\noldWidth: " + oldWidth);
+                console.log("oldHeight: " + oldHeight);
+
+                console.log("moveX: " + moveX);
+                console.log("moveY: " + moveY);
+                console.log("newWidth: " + newWidth);
+                console.log("newHeight: " + newHeight);
+                console.log("newWidth: " + newWidth + "px");
+                console.log("newHeight: " + newHeight + "px");
+
+
+                this.parentElement.getElementsByTagName("div")[0].style.width = newWidth + 4 + "px";
+                this.parentElement.getElementsByTagName("div")[0].style.height = newHeight + 4 + "px";
+                console.log(this.parentElement.getElementsByTagName("div")[0].style.width);
+                console.log(this.parentElement.getElementsByTagName("div")[0].style.height);
+
+                // var padding = oldHeight - p.css("font-size");
+                // var newHeight = padding * (oldHeight / padding);
+
+                p.css("font-size", newHeight - 10 + "px");
+
+                oldPosX = e.clientX;
+                oldPosY = e.clientY;
+            }
         }
     });
     
@@ -87,31 +171,7 @@ $(document).ready(function() {
 });
 
 
-/*function openBackgroundImage(event) {
-    var selected = event.target.files[0];
-    var fr = new FileReader();
-    fr.onload = function(event) {
-        document.getElementById("preview").style.backgroundImage = "url('" + event.target.result + "')";
-    }
-    fr.readAsDataURL(event.target.files[0]);
-    
-    document.getElementById("preview").style.backgroundColor = null;
-}*/
-
-/*function changeBackgroundColor(event) {
-    document.getElementById("preview").style.backgroundColor = event.target.value;
-    document.getElementById("preview").style.backgroundImage = null;
-}*/
-
-/*function openLogoImage(event) {
-    var selected = event.target.files[0];
-    var fr = new FileReader();
-    fr.onload = function(event) {
-        document.getElementById("previewLogo").style.backgroundImage = "url('" + event.target.result + "')";
-    }
-    fr.readAsDataURL(event.target.files[0]);
-}*/
-
 function updateValue(output) {
-    document.getElementById(output).textContent = event.target.value;
+    $("#" + output).text(event.target.value);
+    //document.getElementById(output).textContent = event.target.value;
 }

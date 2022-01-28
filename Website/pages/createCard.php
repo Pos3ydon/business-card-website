@@ -3,7 +3,10 @@
 <html>
 
 <head>
-    <link rel="icon" href="./../images/icon.png">
+    <title>Create Business Card</title>
+
+
+    <link rel="icon" href="./../images/website_icon.svg">
 
     <link rel="stylesheet" href="./../main_style_low-priority.css">
 
@@ -19,70 +22,72 @@
     <link rel="stylesheet" href="./../styles/appendField.css">
     <!-- Result preview -->
     <link rel="stylesheet" href="./../styles/resultPreview.css">
+    <link rel="stylesheet" href="./../styles/resultPreviewStructure.css">
     <!-- Qr-Code -->
     <link rel="stylesheet" href="./../styles/qrcode.css">
 
 
     <link rel="stylesheet" href="./../main_style_high-priority.css">
-
 </head>
 
 <body>
     <?php
-    //include("pages/menu_bar.php");
-    // $firstName = "";
-    // $lastName = "";
-    // $profession = "";
-    // $email = "";
-    // $website = "";
-    // $company = "";
-
-    // print_r($_POST);
+        //include("pages/menu_bar.php");
     ?>
 
     <div id="container">
         <div id="mainFormDiv">
             <div id="mainForm">
                 <div id="formFirstName" class="formField">
-                    <button class="deleteFieldBtn" onclick="deleteField('formFirstName', 'btn_firstName')"></button>
-                    <label>First name:</label>
-                    <input id="firstName" class="formFieldInput" type="text" placeholder="First Name" oninput="updateValue('previewFirstNameP')" name="firstName" maxlength="10">
+                    <button class="deleteFieldBtn" onclick="deleteField('formFirstName', 'btn_firstName')" tabindex="-1"></button>
+                    <label class="formFieldLabel">First name:</label>
+                    <input id="firstName" class="formFieldInput" type="text" placeholder="First Name" oninput="this.value = this.value.replace(/[^ \u00C0-\u017Fa-zA-Z]/g, ''); updateValue('previewFirstNameP')" name="firstName" maxlength="255">
                 </div>
                 <div id="formLastName" class="formField">
-                    <button class="deleteFieldBtn" onclick="deleteField('formLastName', 'btn_lastName')"></button>
-                    <label>Last name:</label>
-                    <input id="lastName" class="formFieldInput" type="text" placeholder="Last Name" oninput="updateValue('previewLastNameP')" name="lastName" maxlength="10">
+                    <button class="deleteFieldBtn" onclick="deleteField('formLastName', 'btn_lastName')" tabindex="-1"></button>
+                    <label class="formFieldLabel">Last name:</label>
+                    <input id="lastName" class="formFieldInput" type="text" placeholder="Last Name" oninput="this.value = this.value.replace(/[^ \u00C0-\u017Fa-zA-Z]/g, ''); updateValue('previewLastNameP')" name="lastName" maxlength="255">
                 </div>
                 <div id="formProfession" class="formField" hidden>
-                    <button class="deleteFieldBtn" onclick="deleteField('formProfession', 'btn_profession')"></button>
-                    <label>Profession:</label>
-                    <input id="profession" class="formFieldInput" type="profession" placeholder="Profession" oninput="updateValue('previewProfessionP')" name="profession" maxlength="10">
+                    <button class="deleteFieldBtn" onclick="deleteField('formProfession', 'btn_profession')" tabindex="-1"></button>
+                    <label class="formFieldLabel">Profession:</label>
+                    <input id="profession" class="formFieldInput" type="profession" placeholder="Profession" oninput="updateValue('previewProfessionP')" name="profession" maxlength="255">
                 </div>
                 <div id="formEmail" class="formField" hidden>
-                    <button class="deleteFieldBtn" onclick="deleteField('formEmail', 'btn_email')"></button>
-                    <label>E-Mail:</label>
-                    <input id="email" class="formFieldInput" type="email" placeholder="E-Mail" oninput="updateValue('previewEmailP')" name="email" maxlength="20">
+                    <button class="deleteFieldBtn" onclick="deleteField('formEmail', 'btn_email')" tabindex="-1"></button>
+                    <label class="formFieldLabel">E-Mail:</label>
+                    <input id="email" class="formFieldInput" type="email" placeholder="E-Mail" oninput="updateValue('previewEmailP')" name="email" maxlength="255">
                 </div>
                 <div id="formTel" class="formField" hidden>
-                    <button class="deleteFieldBtn" onclick="deleteField('formTel', 'btn_tel')"></button>
-                    <label>Telefon:</label>
-                    <input id="tel" class="formFieldInput" type="tel" placeholder="Tel." oninput="updateValue('previewTelP')" name="tel" maxlength="10">
+                    <button class="deleteFieldBtn" onclick="deleteField('formTel', 'btn_tel')" tabindex="-1"></button>
+                    <label class="formFieldLabel">Telefon:</label>
+                    <input id="tel" class="formFieldInput" type="tel" placeholder="Tel." oninput="this.value = this.value.replace(/[^\+ 0-9]/g, ''); updateValue('previewTelP')" name="tel" maxlength="255">
                 </div>
                 <div id="formWebsite" class="formField" hidden>
-                    <button class="deleteFieldBtn" onclick="deleteField('formWebsite', 'btn_website')"></button>
-                    <label>Website:</label>
-                    <input id="website" class="formFieldInput" type="url" placeholder="Website" oninput="updateValue('previewWebsiteP')" name="website"maxlength="10">
+                    <button class="deleteFieldBtn" onclick="deleteField('formWebsite', 'btn_website')" tabindex="-1"></button>
+                    <label class="formFieldLabel">Website:</label>
+                    <input id="website" class="formFieldInput" type="url" placeholder="Website" oninput="updateValue('previewWebsiteP')" name="website"maxlength="255">
                 </div>
                 <div id="formCompany" class="formField" hidden>
-                    <button class="deleteFieldBtn" onclick="deleteField('formCompany', 'btn_company')"></button>
-                    <label>Company:</label>
-                    <input id="company" class="formFieldInput" type="company" placeholder="Company" oninput="updateValue('previewCompanyP')" name="company" maxlength="10">
+                    <button class="deleteFieldBtn" onclick="deleteField('formCompany', 'btn_company')" tabindex="-1"></button>
+                    <label class="formFieldLabel">Company:</label>
+                    <input id="company" class="formFieldInput" type="company" placeholder="Company" oninput="updateValue('previewCompanyP')" name="company" maxlength="255">
                 </div>
+                <!-- <div id="formFirmensitz" class="formField" hidden>
+                    <button class="deleteFieldBtn" onclick="deleteField('formFirmensitz', 'btn_firmensitz')"></button>
+                    <label class="formFieldLabel">Company:</label>
+                    <input id="Firmensitz" class="formFieldInput" type="text" placeholder="Firmensitz" oninput="updateValue('previewfirmensitzP')" name="firmensitz" maxlength="255">
+                </div>
+                <div id="formBirthdate" class="formField" hidden>
+                    <button class="deleteFieldBtn" onclick="deleteField('formBirthdate', 'btn_birthdate')"></button>
+                    <label class="formFieldLabel">Company:</label>
+                    <input id="birthdate" class="formFieldInput" type="text" placeholder="Birthdate" oninput="updateValue('previewBirthdateP')" name="birthdate" maxlength="255">
+                </div> -->
 
                 <div id="mainFormButtons">
-                    <input type="button" id="new_textfield" class="btn btn-primary" value="Add new field">
+                    <input type="button" id="btn_openAppendFieldWindow" class="btn btn-primary" value="Add new field">
 
-                    <button id="btn_generate" class="btn btn-success" onclick="generateCode()">Generate QR-Code</button>
+                    <button id="btn_generate" class="btn btn-success" onclick="//generateCode()">Generate QR-Code</button>
                 </div>
             </div>
 
@@ -95,7 +100,7 @@
                     <div id="changeBackgroundWindow" hidden>
                         <div id="changeBackgroundWindowContent">
                             <div>
-                                <label>Colour:</label>
+                                <label>Color:</label>
                                 <input id="changeBackgroundColorBtn" type="color" value="#808080">
                             </div>
                             <div>
@@ -114,31 +119,65 @@
                                 <button id="deletePreviewLogoBtn"></button> -->
                         </div>
                     </div>
-                    <div id="previewFirstName">
-                        <p id="previewFirstNameP" class="previewField"></p>
+                    <!-- <div id="previewFirstName" class="previewField">
+                        <div class="draggable">
+                            <p id="previewFirstNameP"></p>
+                        </div>
+                    </div> -->
+                    <div id="previewFirstName" class="previewField">
+                        <div class="draggable">
+                            <p id="previewFirstNameP"></p>
+                        </div>
+                        <button class="btn_previewChangeFontSize" hidden></button>
                     </div>
                     <div id="previewLastName" class="previewField">
-                        <p id="previewLastNameP"></p>
+                        <div class="draggable">
+                            <p id="previewLastNameP"></p>
+                        </div>
+                        <button class="btn_previewChangeFontSize" hidden></button>
                     </div>
                     <div id="previewProfession" class="previewField">
-                        <p id="previewProfessionP"></p>
+                        <div class="draggable">
+                            <p id="previewProfessionP"></p>
+                        </div>
+                        <button class="btn_previewChangeFontSize" hidden></button>
                     </div>
                     <div id="previewEmail" class="previewField">
-                        <p id="previewEmailP"></p>
+                        <div class="draggable">
+                            <p id="previewEmailP"></p>
+                        </div>
+                        <button class="btn_previewChangeFontSize" hidden></button>
                     </div>
                     <div id="previewTel" class="previewField">
-                        <p id="previewTelP"></p>
+                        <div class="draggable">
+                            <p id="previewTelP"></p>
+                        </div>
+                        <button class="btn_previewChangeFontSize" hidden></button>
                     </div>
                     <div id="previewWebsite" class="previewField">
-                        <p id="previewWebsiteP"></p>
+                        <div class="draggable">
+                            <p id="previewWebsiteP"></p>
+                        </div>
+                        <button class="btn_previewChangeFontSize" hidden></button>
                     </div>
                     <div id="previewCompany" class="previewField">
-                        <p id="previewCompanyP"></p>
+                        <div class="draggable">
+                            <p id="previewCompanyP"></p>
+                        </div>
+                        <button class="btn_previewChangeFontSize" hidden></button>
                     </div>
+                    <!-- <div id="previewFirmensitz" class="previewField draggable">
+                        <p id="previewFirmensitzP"></p>
+                    </div>
+                    <div id="previewGeburtsdatum" class="previewField draggable">
+                        <p id="previewGeburtsdatumP"></p>
+                    </div> -->
                 </div>
             </div>
-            <div id="qrcodeDiv">
+            <div id="qrcodeDiv" hidden>
                 <div id="qrcode"></div>
+                <button id="qrcodeSaveBtn" class="btn btn-primary">Save</button>
+                <button id="qrcodePrintBtn" class="btn btn-primary">Print</button>
             </div>
 
         </div>
@@ -163,68 +202,25 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<!-- <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script> -->
+<!-- <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> -->
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src="./../libs/jquery-qrcode-master/src/qrcode.js"></script>
+<!-- <script type="text/javascript" src="./../libs/jquery-qrcode-master/src/qrcode.js"></script>
 <script type="text/javascript" src="./../libs/jquery-qrcode-master/src/jquery.qrcode.js"></script>
-<script type="text/javascript" src="./../libs/jquery-qrcode-master/jquery.qrcode.min.js"></script>
+<script type="text/javascript" src="./../libs/jquery-qrcode-master/jquery.qrcode.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+
+<script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
 
 <script src="./../scripts/resultPreview.js"></script>
 <script src="./../scripts/appendField.js"></script>
+<script src="./../scripts/qrCode.js"></script>
 
 <script>
-    function generateCode() {
-        //alert($("#openPreviewLogoBtn").val());
-
-        var formData = new FormData();
-        formData.append("firstName", $("#firstName").val());
-        formData.append("lastName", $("#lastName").val());
-        formData.append("profession", $("#profession").val());
-        formData.append("email", $("#email").val());
-        formData.append("tel", $("#tel").val());
-        formData.append("website", $("#website").val());
-        formData.append("company", $("#company").val());
-        formData.append("logoImage", document.getElementById("openPreviewLogoBtn").files[0]);
-        formData.append("backgroundColor", $("#preview").css("background-color"));
-        formData.append("backgroundImage", document.getElementById("openBackgroundImageBtn").files[0]);
-
-        
-        $.ajax({
-            url: "./../php/writeNewCard.php",
-            type: "POST",
-            data: formData,/*{
-                /*"firstName": $("#firstName").val(),
-                "lastName": $("#lastName").val(),
-                "profession": $("#profession").val(),
-                "email": $("#email").val(),
-                "tel": $("#tel").val(),
-                "website": $("#website").val(),
-                "company": $("#company").val(),
-                "logoImage": $("#openPreviewLogoBtn").val(),
-                "backgroundColor": $("#preview").css("background-color"),
-                "backgroundImage": $("#openBackgroundImageBtn").val()
-                formData
-            }*/
-            processData: false,
-            contentType: false,
-        }).done(function(id) {
-            //alert(id);
-            
-            var qrSize = 256;
-            
-            $("#qrcode").empty();
-            jQuery(function() {
-                jQuery('#qrcode').qrcode({
-                    width: qrSize,
-                    height: qrSize,
-                    text: window.location.origin + "?id=" + id
-                });
-            })
-        });
-    }
+    
 </script>
 
 </html>
