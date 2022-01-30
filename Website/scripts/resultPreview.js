@@ -97,9 +97,9 @@ $(document).ready(function() {
             oldPosY = e.clientY;
         },
         mousemove: function(e) {
-            var p = $(this).parent().find("div").find("p");
-            var div = $(this).parent().find("div");
             var parent = $(this).parent();
+            var div = parent.find("div");
+            var p = div.find("div");
 
             if (ismousedown) {
                 var moveX = oldPosX - e.clientX;
@@ -110,26 +110,12 @@ $(document).ready(function() {
 
                 var newWidth = oldWidth - moveX;
                 var newHeight = oldHeight - moveY;
-                //var newHeight = newWidth * (oldHeight / oldWidth);
-                
-                console.log("\noldWidth: " + oldWidth);
-                console.log("oldHeight: " + oldHeight);
-
-                console.log("moveX: " + moveX);
-                console.log("moveY: " + moveY);
-                console.log("newWidth: " + newWidth);
-                console.log("newHeight: " + newHeight);
-                console.log("newWidth: " + newWidth + "px");
-                console.log("newHeight: " + newHeight + "px");
 
 
-                this.parentElement.getElementsByTagName("div")[0].style.width = newWidth + 4 + "px";
-                this.parentElement.getElementsByTagName("div")[0].style.height = newHeight + 4 + "px";
-                console.log(this.parentElement.getElementsByTagName("div")[0].style.width);
-                console.log(this.parentElement.getElementsByTagName("div")[0].style.height);
-
-                // var padding = oldHeight - p.css("font-size");
-                // var newHeight = padding * (oldHeight / padding);
+                if (newWidth + parseInt(parent.css("left")) + 4 < parseInt(parent.parent().css("width")))
+                    div.css("width", newWidth + 4 + "px");
+                if (newHeight + parseInt(parent.css("top")) + 4 < parseInt(parent.parent().css("height")))
+                    div.css("height", newHeight + 4 + "px");
 
                 p.css("font-size", newHeight - 10 + "px");
 

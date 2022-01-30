@@ -3,6 +3,8 @@
     
     position: relative;
     height: 50%;
+    
+    box-shadow: inset 0px 0px 10px black;
 }
 
 #qrcode {

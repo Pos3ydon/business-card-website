@@ -1,3 +1,5 @@
+business_card_test
+
 CREATE TABLE tbl_business_cards (
     cardID int NOT NULL PRIMARY KEY AUTO_INCREMENT,
     firstName varchar(255),

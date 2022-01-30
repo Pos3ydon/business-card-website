@@ -126,43 +126,43 @@
                     </div> -->
                     <div id="previewFirstName" class="previewField">
                         <div class="draggable">
-                            <p id="previewFirstNameP"></p>
+                            <div id="previewFirstNameP"></div>
                         </div>
                         <button class="btn_previewChangeFontSize" hidden></button>
                     </div>
                     <div id="previewLastName" class="previewField">
                         <div class="draggable">
-                            <p id="previewLastNameP"></p>
+                            <div id="previewLastNameP"></div>
                         </div>
                         <button class="btn_previewChangeFontSize" hidden></button>
                     </div>
                     <div id="previewProfession" class="previewField">
                         <div class="draggable">
-                            <p id="previewProfessionP"></p>
+                            <div id="previewProfessionP"></div>
                         </div>
                         <button class="btn_previewChangeFontSize" hidden></button>
                     </div>
                     <div id="previewEmail" class="previewField">
                         <div class="draggable">
-                            <p id="previewEmailP"></p>
+                            <div id="previewEmailP"></div>
                         </div>
                         <button class="btn_previewChangeFontSize" hidden></button>
                     </div>
                     <div id="previewTel" class="previewField">
                         <div class="draggable">
-                            <p id="previewTelP"></p>
+                            <div id="previewTelP"></div>
                         </div>
                         <button class="btn_previewChangeFontSize" hidden></button>
                     </div>
                     <div id="previewWebsite" class="previewField">
                         <div class="draggable">
-                            <p id="previewWebsiteP"></p>
+                            <div id="previewWebsiteP"></div>
                         </div>
                         <button class="btn_previewChangeFontSize" hidden></button>
                     </div>
                     <div id="previewCompany" class="previewField">
                         <div class="draggable">
-                            <p id="previewCompanyP"></p>
+                            <div id="previewCompanyP"></div>
                         </div>
                         <button class="btn_previewChangeFontSize" hidden></button>
                     </div>

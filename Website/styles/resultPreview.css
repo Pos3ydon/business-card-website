@@ -12,6 +12,8 @@
     
     position: relative;
     height: 50%;
+    
+    box-shadow: inset 0px 5px 10px black;
 }
 
 #preview {
@@ -271,14 +273,9 @@
     border: 2px solid black;
 }
 
-.draggable > p {
-    display: contents;
-    margin: 0;
-
-    /*transform: translate(-50%, -50%);*/
+.draggable > div {
 
     color: black;
-    line-height: 0.7;
 }
 
 
@@ -291,8 +288,8 @@
     background-position: center;
     
     position: absolute;
-    height: 25px;
-    width: 25px;
-    left: calc(100% - 5px);
-    top: calc(100% - 5px);
+    height: 35px;
+    width: 35px;
+    left: calc(100% - 10px);
+    top: calc(100% - 10px);
 }

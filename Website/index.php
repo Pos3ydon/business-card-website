@@ -75,25 +75,25 @@
                     <div id="viewLogo" class="viewField"style="background-image: url('<?php echo $logo?>');">
                     </div>
                     <div id="viewFirstName" class="viewField" style="top: <?php echo $meta->firstName->top;?>; left: <?php echo $meta->firstName->left;?>; width: <?php echo $meta->firstName->width;?>; height: <?php echo $meta->firstName->height;?>;">
-                        <p id="viewFirstNameP" style="font-size: <?php echo $meta->firstName->fontSize;?>;>"><?php echo htmlspecialchars($result["firstName"]);?></p>
+                        <div id="viewFirstNameP" style="font-size: <?php echo $meta->firstName->fontSize;?>;>"><?php echo htmlspecialchars($result["firstName"]);?></div>
                     </div>
                     <div id="viewLastName" class="viewField" style="top: <?php echo $meta->lastName->top;?>; left: <?php echo $meta->lastName->left;?>">
-                        <p id="viewLastNameP"><?php echo htmlspecialchars($result["lastName"]);?></p>
+                        <div id="viewLastNameP" style="font-size: <?php echo $meta->lastName->fontSize;?>;>"><?php echo htmlspecialchars($result["lastName"]);?></div>
                     </div>
                     <div id="viewProfession" class="viewField" style="top: <?php echo $meta->profession->top;?>; left: <?php echo $meta->profession->left;?>">
-                        <p id="viewProfessionP"><?php echo htmlspecialchars($result["profession"]);?></p>
+                        <div id="viewProfessionP" style="font-size: <?php echo $meta->profession->fontSize;?>;>"><?php echo htmlspecialchars($result["profession"]);?></div>
                     </div>
                     <div id="viewEmail" class="viewField" style="top: <?php echo $meta->email->top;?>; left: <?php echo $meta->email->left;?>">
-                        <p id="viewEmailP"><?php echo htmlspecialchars($result["email"]);?></p>
+                        <div id="viewEmailP" style="font-size: <?php echo $meta->email->fontSize;?>;>"><?php echo htmlspecialchars($result["email"]);?></div>
                     </div>
                     <div id="viewTel" class="viewField" style="top: <?php echo $meta->tel->top;?>; left: <?php echo $meta->tel->left;?>">
-                        <p id="viewTelP"><?php echo htmlspecialchars($result["tel"]);?></p>
+                        <div id="viewTelP" style="font-size: <?php echo $meta->tel->fontSize;?>;>"><?php echo htmlspecialchars($result["tel"]);?></div>
                     </div>
                     <div id="viewWebsite" class="viewField" style="top: <?php echo $meta->website->top;?>; left: <?php echo $meta->website->left;?>">
-                        <p id="viewWebsiteP"><?php echo htmlspecialchars($result["website"]);?></p>
+                        <div id="viewWebsiteP" style="font-size: <?php echo $meta->website->fontSize;?>;>"><?php echo htmlspecialchars($result["website"]);?></div>
                     </div>
                     <div id="viewCompany" class="viewField" style="top: <?php echo $meta->company->top;?>; left: <?php echo $meta->company->left;?>">
-                        <p id="viewCompanyP"><?php echo htmlspecialchars($result["company"]);?></p>
+                        <div id="viewCompanyP" style="font-size: <?php echo $meta->company->fontSize;?>;>"><?php echo htmlspecialchars($result["company"]);?></div>
                     </div>
                 </div>
             </div>

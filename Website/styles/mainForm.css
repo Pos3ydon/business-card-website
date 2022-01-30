@@ -6,6 +6,8 @@
     width: 50%;
     height: 100%;
     float: left;
+
+    box-shadow: inset 5px 0px 10px black;
 }
 
 #mainForm {
