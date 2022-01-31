@@ -1,0 +1,295 @@
+#resultDiv {
+    font-family: 'Inconsolata', monospace;
+    background: hsl(180, 6%, 13%);
+    
+    width: 50%;
+    height: 100%;
+    float: left;
+}
+
+#previewDiv {
+    background: hsl(180, 6%, 11%);
+    
+    position: relative;
+    height: 50%;
+    
+    box-shadow: inset 0px 5px 10px black;
+}
+
+#preview {
+    background: grey;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    position: absolute;
+    height: 70%;
+    width: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    border-radius: 30px;
+}
+
+
+
+
+
+/*Change Background*/
+#previewChangeBackgroundBtn {
+    background-image: url(../images/pencil-square-light.svg);
+    background-repeat: no-repeat;
+    background-size: 60% 60%;
+    background-color: transparent;
+    background-position: center;
+    
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    left: 100%;
+    transform: translate(-100%, 0);
+    
+    border: 0;
+}
+
+#previewChangeBackgroundBtn:hover {
+    background-image: url(../images/pencil-square.svg);
+}
+
+#changeBackgroundWindow {
+    background: hsl(180, 6%, 30%);
+    display: none;
+    
+    position: absolute;
+    float: left;
+    height: 100px;
+    width: 200px;
+    left: 100%;
+    
+    border-radius: 5px;
+}
+
+#changeBackgroundWindow:hover {
+    /*display: block;*/
+}
+
+#changeBackgroundWindowContent {
+    position: absolute;
+    width: 106px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    
+    text-align: left
+}
+
+#changeBackgroundColorBtn {
+    vertical-align: middle;
+}
+
+#openBackgroundImageBtn {
+    font-size: 0;
+}
+
+#openBackgroundImageBtn::file-selector-button {
+    display: none;
+}
+
+#openBackgroundImageBtnBtn {
+    background-image: url(../images/image.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    width: 50px;
+    height: 27px;
+    padding: 1px 2px;
+    vertical-align: middle;
+    
+    border: 1px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: rgb(118, 118, 118);
+}
+
+
+
+
+
+/*Logo*/
+#previewLogo {
+    background-image: url(../images/standard-logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    position: relative;
+    float: left;
+    /*height: 30%;*/
+    width: 20%;
+    top: 30px;
+    left: 30px;
+}
+
+#previewLogo:before {
+    content:     "";
+    display:     block;
+    padding-top: 100%; /* initial ratio of 1:1*/
+}
+
+#previewLogo:hover {
+    /*height: 90px;
+    width: 90px;*/
+}
+
+#previewLogo > div {
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0%;
+    
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#previewLogo > div:hover {
+    opacity: 100%;
+}
+
+#previewLogo > div > input {
+    z-index: 5;
+    
+    height: 100%;
+    width: 100%;
+    
+    font-size: 0;
+}
+
+#previewLogo > div > input::file-selector-button {
+    display: none;
+}
+
+#previewLogo > div > button {
+    font-family: 'Inconsolata', monospace;
+    background-color: transparent;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    border: 0;
+    
+    color: white;
+    font-size: 20px;
+}
+
+/*#movePreviewLogoBtn {
+    background-image: url(../images/pencil-square.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    height: 20px;
+    width: 20px;
+    left: 100%;
+}
+
+#deletePreviewLogoBtn {
+    background-image: url(../images/delete.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: black;
+    
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    height: 20px;
+    width: 20px;
+    left: 100%;
+
+    border: 0;
+}*/
+
+
+
+
+
+/*Fields*/
+.previewField {
+    position: absolute;
+    cursor: move;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+            
+    transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.previewField:hover {
+    z-index: 5;
+} 
+
+.previewField:hover > button {
+    display: block;
+}
+
+.previewField:hover > div {
+    background-color: rgba(0, 0, 0, 0.5);
+
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+/* .previewField > p {
+    display: contents;
+
+    margin: 0;
+} */
+
+
+
+.draggable {
+    /* height: 100%;
+    width: 100%; */
+
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    overflow: hidden;
+    text-align: center;
+}
+
+.draggable:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+
+    border-radius: 5px;
+    border: 2px solid black;
+}
+
+.draggable > div {
+
+    color: black;
+}
+
+
+
+.btn_previewChangeFontSize {
+    background-image: url(./../images/arrows-angle-expand.svg);
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center;
+    
+    position: absolute;
+    height: 35px;
+    width: 35px;
+    left: calc(100% - 10px);
+    top: calc(100% - 10px);
+}

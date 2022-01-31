@@ -1,0 +1,42 @@
+#appendFieldWindowDiv {
+    font-family: 'Inconsolata', monospace;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    left: 0px;
+    top: 0px;
+    display: none;
+
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+#appendFieldWindow {
+    background: hsl(180, 6%, 15%);
+
+    position: absolute;
+    width: 300px;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 50px;
+    text-align: center;
+}
+
+#appendFieldWindowTitle {
+    margin: 0px;
+    margin-bottom: 30px;
+}
+
+.appendFieldButton {
+    margin: auto;
+    margin-bottom: 5px;
+}
+
+#btn_closeAppendFieldWindow {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}

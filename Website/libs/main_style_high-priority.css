@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@600&display=swap');
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 0px white inset !important;
+    background: transparent !important;
+    /* -webkit-text-fill-color: transparent !important; */
+}
+
+
+/*TODO: muss noch richtig angewand werden*/
+@font-face {
+    font-family: "CascadiaCodePL";
+    src: url('fonts/CascadiaCode-2110.31/ttf/CascadiaCodePL.ttf');
+}
+
+body {
+    background-color: rgb(50, 50, 50);
+    
+    color: white;
+}
+
+#container {
+    font-family: 'CascadiaCodePL', monospace;
+    
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 80%;
+    height: 80%;
+    margin: 5% 10%;
+    float: left;
+    
+    text-align: center;
+}
+
+button, input {
+    color: black;
+}
+
+

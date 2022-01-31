@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#cardDiv {
+    font-family: 'Inconsolata', monospace;
+    background: red;
+    
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#viewDiv {
+    background: hsl(180, 6%, 11%);
+    
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#view {
+    background: grey;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    position: absolute;
+    height: 250px;
+    width: 450px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    border-radius: 30px;
+}
+
+
+/*Logo*/
+#viewLogo {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+    position: relative;
+    float: left;
+    height: 90px;
+    width: 90px;
+    top: 30px;
+    left: 30px;
+}
+
+
+/*FirstName*/
+#viewFirstName {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    
+    color: black;
+    text-align: left;
+    font-size: 30px;
+}
+
+#viewFirstNameP {
+    margin: 0;
+}
+
+
+/*LastName*/
+#viewLastName {
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    
+    color: black;
+    text-align: left;
+    font-size: 30px;
+}
+
+#viewLastNameP {
+    margin: 0;
+}
+
+
+/*Profession*/
+#viewProfession {
+    position: absolute;
+    top: 28%;
+    left: 30%;
+    
+    color: black;
+    text-align: left;
+    font-size: 30px;
+}
+
+#viewProfessionP {
+    margin: 0;
+}
+
+
+/*E-Mail*/
+#viewEmail {
+    position: absolute;
+    top: 55%;
+    left: 8%;
+    
+    color: black;
+    text-align: left;
+    font-size: 25px;
+}
+
+#viewEmailP {
+    margin: 0;
+}
+
+
+/*Telefon*/
+#viewTel {
+    position: absolute;
+    top: 72%;
+    left: 45%;
+    
+    color: black;
+    text-align: left;
+    font-size: 20px;
+}
+
+#viewTelP {
+    margin: 0;
+}
+
+
+/*Website*/
+#viewWebsite {
+    position: absolute;
+    top: 72%;
+    left: 8%;
+    
+    color: black;
+    text-align: left;
+    font-size: 20px;
+}
+
+#viewWebsiteP {
+    margin: 0;
+}
+
+
+/*Company*/
+#viewCompany {
+    position: absolute;
+    top: 85%;
+    left: 8%;
+    
+    color: black;
+    text-align: left;
+    font-size: 20px;
+}
+
+#viewCompanyP {
+    margin: 0;
+}

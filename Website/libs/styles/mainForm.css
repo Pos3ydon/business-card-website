@@ -1,0 +1,74 @@
+#mainFormDiv {
+    font-family: 'Inconsolata', monospace !important;
+    background: hsl(180, 6%, 9%);
+
+    position: relative;
+    width: 50%;
+    height: 100%;
+    float: left;
+
+    box-shadow: inset 5px 0px 10px black;
+}
+
+#mainForm {
+    position: absolute;
+    width: 100%;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.formField {
+    position: relative;
+    margin-left: 50%;
+    transform: translate(-50%, 0);
+    
+    text-align: left;
+}
+
+.formField:hover > button {
+    background-image: url(../images/delete.png);
+}
+
+.formFieldInput {
+    background-color: transparent !important;
+
+    width: 40%;
+    
+    border: 0px;
+    border-bottom: 50px;
+    border-bottom-width: 50px;
+    border-bottom-color: blue;
+    
+    color: hsl(0, 0%, 70%);
+}
+
+.formFieldLabel {
+    width: 30%;
+}
+
+.deleteFieldBtn {
+    background-color: transparent;
+    background-size: 100% 100%;
+
+    
+    border: 0;
+    padding: 0;
+    /*margin-left: -20px;*/
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+}
+
+.deleteFieldBtnImg {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    padding: 0;
+    opacity: 0%;
+}
+
+
+#mainFormButtons {
+    margin-top: 40px;
+}

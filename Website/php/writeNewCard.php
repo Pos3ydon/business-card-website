@@ -6,7 +6,6 @@
     
     try {
       $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-      // set the PDO error mode to exception
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     //   echo "Connected successfully";
     } catch(PDOException $e) {
@@ -26,7 +25,7 @@
 
             if (isset($_FILES["logoImage"])) {
                 $extension = pathinfo($_FILES["logoImage"]["name"], PATHINFO_EXTENSION);
-                $isUploaded = move_uploaded_file($_FILES["logoImage"]["tmp_name"], "./../user-images/". $id . "_logoImage." . $extension);
+                $isUploaded = move_uploaded_file($_FILES["logoImage"]["tmp_name"], "./../user-images/" . $id . "_logoImage." . $extension);
             }
             if (isset($_FILES["backgroundImage"])) {
                 $extension = pathinfo($_FILES["backgroundImage"]["name"], PATHINFO_EXTENSION);
@@ -35,6 +34,8 @@
 
 
             print($id);
+
+
 
             die();
         }

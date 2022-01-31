@@ -20,8 +20,8 @@
             {
                 $servername = "localhost";
                 $dbname = "business_card_test";
-                $username = "root";
-                $password = "";
+                $username = 'root';
+                $password = '';
                 
                 try {
                 $conn = new PDO("mysql:host=$servername;dbname=$dbname; charset=utf8mb4", $username, $password);
@@ -56,14 +56,16 @@
             }
         
 
-            $glob = glob("./user-images/" . $_GET["id"] . "_*");
+            //$glob = glob("./user-images/" . $_GET["id"] . "_*");
             //$logo = glob("./../User-Images/" . $_GET["id"] . "_logoImage.*", GLOB_NOSORT)[0];
             //$background = glob("./../User-Images/" . $_GET["id"] . "_backgroundImage.*", GLOB_NOSORT)[0];
+	    $glob = glob("./user-images/" . $_GET["id"] . "_backgroundImage*");
             if (isset($glob[0])) {
                 $background = $glob[0];
             }
-            if (isset($glob[1])) {
-                $logo = $glob[1];
+	    $glob = glob("./user-images/" . $_GET["id"] . "_logoImage*");
+            if (isset($glob[0])) {
+                $logo = $glob[0];
             }
         
         ?>
